@@ -1,0 +1,34 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "net.fmg793.cypressblockitemapi.mixin",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+	],
+	"client": [
+		"forge.ExtBlockMixin",
+		"forge.ItemMixin",
+		"forge.BlockItemMixin",
+		"forge.TesselatorMixin",
+		"forge.MinecraftMixin",
+		"forge.ItemInHandRendererMixin",
+		"forge.TextureManagerMixin",
+		"forge.ParticleManagerMixin",
+		"forge.ItemRendererMixin",
+		"forge.RenderChunkMixin",
+		"forge.PlayerRendererMixin",
+		"forge.ScreenItemCheatMixin",
+		"id.NbtCompoundMixin",
+		"id.NbtElementMixin",
+		"id.WorldChunkMixin",
+		"id.WorldMixin",
+		"id.AlphaChunkStorageMixin",
+		"id.ChunkNibbleStorageMixin",
+		"id.OverworldChunkGeneratorMixin"
+	],
+	"server": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "cypressblockitemapi",
+	"version": "${version}",
+	"name": "CypressBlockItemAPI",
+	"description": "An api to create Blocks and Items, and to add MoreIDs",
+	"authors": [
+		"FMG793!"
+	],
+	"contact": {
+	},
+	"license": "LGPL-3.0-or-later",
+	"icon": "assets/cypressblockitemapi/icon.png",
+	"environment": "client",
+	"entrypoints": {
+	},
+	"mixins": [
+		"cypressblockitemapi.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.0",
+		"minecraft": "1.0.0-alpha.1.0.16.5.20"
+	},
+	"accessWidener": "cypressblockitemapi.classtweaker"
+}

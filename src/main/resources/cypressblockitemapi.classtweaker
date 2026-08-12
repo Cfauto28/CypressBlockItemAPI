@@ -1,0 +1,16 @@
+classTweaker	v1	named
+transitive-accessible method net/minecraft/client/render/vertex/Tesselator <init> (I)V
+transitive-accessible field net/minecraft/client/render/vertex/Tesselator offsetX D
+transitive-accessible field net/minecraft/client/render/vertex/Tesselator offsetY D
+transitive-accessible field net/minecraft/client/render/vertex/Tesselator offsetZ D
+transitive-accessible field net/minecraft/client/render/vertex/Tesselator tesselating Z
+transitive-accessible field net/minecraft/client/render/vertex/Tesselator drawMode I
+transitive-accessible field net/minecraft/client/render/block/BlockRenderer forcedSprite I
+mutable field net/minecraft/client/render/vertex/Tesselator INSTANCE Lnet/minecraft/client/render/vertex/Tesselator;
+transitive-inject-interface net/minecraft/item/BlockItem net/fmg793/cypressblockitemapi/impl/forge/IBlockItemIDProvider
+transitive-inject-interface ext/block/ExtBlock net/fmg793/cypressblockitemapi/forge/ITextureProvider
+transitive-inject-interface net/minecraft/item/Item net/fmg793/cypressblockitemapi/forge/ITextureProvider
+transitive-inject-interface net/minecraft/client/render/vertex/Tesselator net/fmg793/cypressblockitemapi/impl/forge/ITesselatorProvider
+transitive-accessible method net/minecraft/nbt/NbtElement write (Ljava/io/DataOutput;)V
+transitive-accessible method net/minecraft/nbt/NbtElement read (Ljava/io/DataInput;)V
+transitive-inject-interface net/minecraft/nbt/NbtCompound net/fmg793/cypressblockitemapi/impl/id/IShortArrayProvider
