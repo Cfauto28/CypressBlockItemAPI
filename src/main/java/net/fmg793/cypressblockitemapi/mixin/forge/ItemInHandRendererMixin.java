@@ -20,13 +20,17 @@ import net.minecraft.item.ItemStack;
 
 @Mixin(ItemInHandRenderer.class)
 public class ItemInHandRendererMixin {
-	
+
 	@Shadow
 	private Minecraft minecraft;
 
 	@Shadow
 	private BlockRenderer blockRenderer;
-	
+
+	/**
+	 * @author FMG793
+	 * @reason
+	 */
 	@Overwrite
 	public void render(ItemStack item) {
 		GL11.glPushMatrix();

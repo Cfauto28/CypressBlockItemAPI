@@ -19,40 +19,44 @@ import net.minecraft.item.ItemStack;
 
 @Mixin(ScreenItemCheat.class)
 public abstract class ScreenItemCheatMixin extends Screen {
-	
+
 	@Shadow
 	public Minecraft minecraft;
-	
+
 	@Shadow
 	private BlockRenderer blockRendererBlurryTroll;
-	
+
 	@Shadow
 	private boolean createButtons;
-	
+
 	@Shadow
 	private int lastCols;
-	
+
 	@Shadow
 	private int lastRows;
-	
+
 	@Shadow
 	private int lastNOfPages;
-	
+
 	@Shadow
 	private long rotateTimer;
-	
+
 	@Shadow
 	private boolean selectingBlocks;
-	
+
 	@Shadow
 	private boolean resetButtons;
-	
+
 	@Shadow
 	private int currentPage;
-	
+
 	@Shadow
 	public abstract void method_1_2267(int i1, int i2, int i3, int i4, int i5, int i6, float f7);
 
+	/**
+	 * @author
+	 * @reason
+	 */
 	@Overwrite
 	public void method_1_2265(ExtBlock block) {
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.minecraft.textureManager.load(ExtBlock.BY_ID[new ItemStack(block).id].getTextureFile()));
@@ -60,6 +64,10 @@ public abstract class ScreenItemCheatMixin extends Screen {
 		this.method_1_2267(0, 0, i2 % 16 * 16, i2 / 16 * 16, 16, 16, 512.0F);
 	}
 
+	/**
+	 * @author
+	 * @reason
+	 */
 	@Overwrite
 	public void RenderItem(Item item) {
 		GL11.glBindTexture(GL11.GL_TEXTURE_2D, this.minecraft.textureManager.load(Item.BY_ID[new ItemStack(item).id].getTextureFile()));
@@ -79,8 +87,12 @@ public abstract class ScreenItemCheatMixin extends Screen {
 	@Shadow
 	public abstract int nOfExistingItems();
 
+	/**
+	 * @author
+	 * @reason
+	 */
 	@Overwrite
-	protected void buttonClicked(ButtonWidget button) {
+	public void buttonClicked(ButtonWidget button) {
 		if(button.active) {
 			if(button.id == 2) {
 				this.resetButtons = true;
@@ -115,6 +127,10 @@ public abstract class ScreenItemCheatMixin extends Screen {
 		}
 	}
 
+	/**
+	 * @author
+	 * @reason
+	 */
 	@Overwrite
 	public void render(int mouseX, int mouseY, float tickDelta) {
 		if(this.rotateTimer == -1L) {

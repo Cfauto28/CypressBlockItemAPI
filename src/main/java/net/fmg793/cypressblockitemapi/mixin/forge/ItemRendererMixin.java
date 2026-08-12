@@ -26,13 +26,17 @@ import net.minecraft.util.math.MathHelper;
 
 @Mixin(ItemRenderer.class)
 public abstract class ItemRendererMixin extends EntityRenderer {
-	
+
 	@Shadow
 	private BlockRenderer blockRenderer;
-	
+
 	@Shadow
 	private Random random;
 
+	/**
+	 * @author FMG793
+	 * @reason
+	 */
 	@Overwrite
 	public void render(ItemEntity itemEntity1, double d2, double d4, double d6, float f8, float f9) {
 		this.random.setSeed(187L);
@@ -66,9 +70,9 @@ public abstract class ItemRendererMixin extends EntityRenderer {
 				if(!ExtBlock.BY_ID[itemStack10.id].isCube() && itemStack10.id != ExtBlock.STONE_SLAB.id) {
 					f27 = 0.5F;
 				}
-	
+
 				GL11.glScalef(f27, f27, f27);
-	
+
 				for(int i28 = 0; i28 < b13; ++i28) {
 					GL11.glPushMatrix();
 					if(i28 > 0) {
@@ -77,7 +81,7 @@ public abstract class ItemRendererMixin extends EntityRenderer {
 						f16 = (this.random.nextFloat() * 2.0F - 1.0F) * 0.2F / f27;
 						GL11.glTranslatef(f14, f15, f16);
 					}
-	
+
 					this.blockRenderer.method_1_1996(ExtBlock.BY_ID[itemStack10.id]);
 					GL11.glPopMatrix();
 				}
@@ -85,7 +89,7 @@ public abstract class ItemRendererMixin extends EntityRenderer {
 				GL11.glScalef(0.5F, 0.5F, 0.5F);
 				int i17 = itemStack10.getSprite();
 				this.bindTexture(itemStack10.getItem().getTextureFile());
-	
+
 				Tesselator tesselator18 = Tesselator.INSTANCE;
 				f14 = (float)(i17 % 16 * 16 + 0) / 256.0F;
 				f15 = (float)(i17 % 16 * 16 + 16) / 256.0F;
@@ -94,7 +98,7 @@ public abstract class ItemRendererMixin extends EntityRenderer {
 				float f20 = 1.0F;
 				float f21 = 0.5F;
 				float f22 = 0.25F;
-	
+
 				for(int i23 = 0; i23 < b13; ++i23) {
 					GL11.glPushMatrix();
 					if(i23 > 0) {
@@ -103,7 +107,7 @@ public abstract class ItemRendererMixin extends EntityRenderer {
 						float f26 = (this.random.nextFloat() * 2.0F - 1.0F) * 0.3F;
 						GL11.glTranslatef(f24, f25, f26);
 					}
-	
+
 					GL11.glRotatef(180.0F - this.dispatcher.cameraYaw, 0.0F, 1.0F, 0.0F);
 					tesselator18.method_1_1141();
 					tesselator18.normal(0.0F, 1.0F, 0.0F);
@@ -150,7 +154,7 @@ public abstract class ItemRendererMixin extends EntityRenderer {
 		}
 
 	}
-	
+
 	@Shadow
 	public abstract void method_1_1744(int i1, int i2, int i3, int i4, int i5, int i6, boolean z7);
 

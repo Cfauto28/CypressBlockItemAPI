@@ -19,7 +19,7 @@ public class ExtBlockMixin implements ITextureProvider {
 	@Unique
 	private boolean isDefaultTexture;
 
-	@Inject(method = "<init>(ILnet/minecraft/block/Material;)V", at = @At("TAIL"))
+	@Inject(method = "<init>(ILnet/minecraft/block/material/Material;)V", at = @At("TAIL"))
     private void initHead(int id, Material material, CallbackInfo ci) {
 		this.currentTexture = "/terrain.png";
 		this.isDefaultTexture = this.getTextureFile() != null && this.getTextureFile().equalsIgnoreCase("/terrain.png");
@@ -34,7 +34,7 @@ public class ExtBlockMixin implements ITextureProvider {
 	public boolean isDefaultTexture() {
 		return isDefaultTexture;
 	}
-	
+
 	@Override
 	public String getTextureFile() {
 		return this.currentTexture;
